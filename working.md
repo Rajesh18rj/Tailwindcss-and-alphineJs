@@ -13,10 +13,11 @@ a b
 
 ipdi aagiduthu.. 
 
-------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------
 items-center
 
-now <flex item-center> nu kuduthathum, hight wise la center ku varuthu.. 
+
+now <flex item-center> nu kuduthathum, height wise la center ku varuthu.. 
 
 then 
   <flex justify-center
@@ -207,7 +208,7 @@ we also define the h2 properties in styles
 
 then we are creating hoverlist attribute 
 
-    <ul class="hoverlist" >
+    <ul class="hoverlist">
 and we define that in style
 
     .hoverlist>* {
@@ -216,4 +217,100 @@ and we define that in style
     .hoverlist>*>a {
     @apply p-2 block;
     }
+
+# 5
+
+lets add the alphine js to our code , first insert the cdn link in end of the header just like we did it for tailwindcss 
+
+    <li x-data class="relative">
+
+x-data means this element is talking to alphine.js
+
+    <!--Right Side-->
+            <nav>
+                <ul class="flex items-center navitems">
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Create Post</a></li>
+                    <li x-data="{ dropdownOpen: false}" class="relative">
+                        <a @click="dropdownOpen = !dropdownOpen" @click.away="dropdownOpen = false" class="cursor-pointer select-none" >
+                            <img class="h-8 rounded-full object-cover bg-teal-200" src="https://img.icons8.com/doodle/96/bart-simpson.png" alt="bart-simpson"/>
+                            Bart
+                            <img x-bind:class="dropdownOpen ? 'rotate-180 duration-300' : '' " class="w-4 " src="https://img.icons8.com/small/64/777777/expand-arrow.png" alt="expand-arrow"/>
+                        </a>
+                        <div x-show="dropdownOpen" x-cloak class="absolute right-0 bg-white text-black shadow rounded-lg w-40 p-2 z-20 "
+                        x-transition:enter="duration-300 ease-out"
+                        x-transition:enter-start="opacity-0 -translate-y-5 scale-90"
+                        x-transition:enter-end="opacity-100 translate-y-0 scale-100"
+
+                        >
+                            <ul class="hoverlist [&>li>a]:justify-end">
+                                <li><a href="">My Profile</a></li>
+                                <li><a href="">Log Out</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                </ul>
+            </nav>
+
+# 6 
+
+responsive header 
+
+firstu mobile view ku responsive ah iruka mari create panna porom..
+
+  <mobileicon >
+    <a class="h-12 w-12 flex items-center justify-center cursor-pointer hover:bg-gray-700 rounded-lg">
+        <img class="w-6 h-6" src="https://img.icons8.com/small/64/ffffff/menu.png" alt="">
+    </a>
+</mobileicon>
+
+then ,mobile view ku varum bothu oru sila vishayam hide pannanum
+  <!--Right Side-->
+    <nav class="hidden md:block">
+
+this means nav bar la right ku mble view la vantha home, create Post, Bart elllam hidden aagirum
+
+learn about more this in tailwind css docs -> customizing screens 
+
+now enna panna porom na... laptop or desktop screen la antha sandwidch icon ah hide panna porom..
+<mobileicon class="md:hidden">
+just like this 
+
+now ipo enna panna porom naa antha sandwitch icon ah click pannathum.. home , create post and bart ellamey open aaganum 
+
+now come to header tag lets initialize alphine.js 
+
+<body class="bg-gray-100">
+        <header x-data="{ mobilenavOpen: false }"  class="flex items-center justify-between px-8 bg-gray-800 h-20 text-white sticky top-0 z-50">
+            <!--Logo(Left Side)-->
+            <logo>
+                <a class="flex items-center gap-1" href="">
+                    <img class="h-8 -mt-1" src="https://img.icons8.com/small/64/ffffff/handshake-heart.png" alt="handshake-heart"/>
+                    <span>Awesome</span>
+                </a>
+            </logo>
+
+            <mobileicon class="md:hidden">
+                <a @click="mobilenavOpen = !mobilenavOpen" class="h-12 w-12 flex items-center justify-center cursor-pointer hover:bg-gray-700 rounded-lg">
+                    <img class="w-6 h-6" src="https://img.icons8.com/small/64/ffffff/menu.png" alt="">
+                </a>
+            </mobileicon>
+
+            <!--Right Side-->
+            <nav x-show="mobilenavOpen" class=" md:block">
+
+now when i click hamburger icon .. it opens home , create Posts, Bart 
+ 
+now ellamey those things (home , create Posts, Bart ) horizontal ah iruku namma vertical ah matha porom.. 
+
+ <mobileicon class="md:hidden">
+    <a @click="mobilenavOpen = !mobilenavOpen" class="h-12 w-12 flex items-center justify-center cursor-pointer hover:bg-gray-700 rounded-lg">
+        <img x-show="!mobilenavOpen" class="w-6 h-6 select-none" src="https://img.icons8.com/small/64/ffffff/menu.png" alt="">
+        <img x-show="mobilenavOpen" x-cloak class="w-6 h-6 select-none" src="https://img.icons8.com/small/64/ffffff/delete-sign.png" alt="">
+    </a>
+</mobileicon>
+
+namma inga menu icon ku keela cancel icon add pannirukom.. then athuku alphine js vachu code um yeluthirukom.. 
+if menu va click panna enna nadakanum.. cancel ah click panna enna nadakum nu define pannirukom
 
