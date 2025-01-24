@@ -2,11 +2,50 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
         <title>Awesome</title>
         <!--Style-->
         <style type="text/tailwindcss">
+            :root {
+                --primary: rgb(88, 40, 244);
+                --primary-hover: rgb(69, 29, 200);
+            }
+
+            h1 {
+                font-size: 4rem;
+                line-height: 1.2;
+                font-weight: bold;
+                margin-bottom: 1rem;
+            }
+
+            .button {
+                display: inline-flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+                text-align: center;
+                border-radius: 0.5rem;
+                cursor: pointer;
+                padding: 0 1rem;
+                padding-left: 1rem;
+                min-height: 3.3rem;
+                font-weight: 600;
+                box-shadow: 0.4px 3px rgba(0,0,0,0.1);
+                transition-property: transform;
+                transition-duration: .2s;
+                color: white;
+                background-color: var(--primary);
+            }
+            .button:hover {
+                background-color: var(--primary-hover);
+            }
+
+            .button:active {
+                transform: scale(0.95);
+            }
+
             .navitems>li>a {
                 @apply p-4 hover:bg-gray-700 rounded-lg flex items-center gap-2
             }
@@ -38,6 +77,13 @@
                 </ul>
             </nav>
         </header>
+
+        <hero class="block bg-gray-700 text-white text-center py-24 px-10 bg-[url('images/scott-graham-5fNmWej4tAA-unsplash.jpg')]">
+            <h1> Awesome photos and Captions</h1>
+            <p class="text-lg font-bold mb-5"> Share your favourite Photos from Flickr and add a great captions</p>
+            <a class="button" href="">Get Started</a>
+        </hero>
+
 
     </body>
 </html>

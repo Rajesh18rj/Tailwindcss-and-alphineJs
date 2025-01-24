@@ -88,3 +88,63 @@ intha style ah innum kooda short panlam..
     }
 </style>
 intha maari.. 
+
+# 2
+
+block
+nu kuduthom naa , antha div kulla irukathu oru block ah aagidum.. 
+
+then intha h1 tag ku predifend ah style la code yeluthalam ..            <h1> Awesome photos and Captions</h1>
+
+h1 {
+font-size: 4rem;
+line-height: 1.2;
+font-weight: bold;
+margin-bottom: 1rem;
+}
+
+then eppolam h1 tag use panromo appolam ithu apply aagidum.. 
+
+here we declare button class..<a class="button" href="">Get Started</a>
+
+we write the design for this in style tag
+
+.button {
+display: inline-flex;
+flex-wrap: wrap;
+align-items: center;
+justify-content: center;
+flex-shrink: 0;
+text-align: center;
+border-radius: 0.5rem;
+cursor: pointer;
+padding: 0 1rem;
+padding-left: 1rem;
+min-height: 3.3rem;
+font-weight: 600;
+box-shadow: 0.4px 3px rgba(0,0,0,0.1);
+transition-property: transform;
+transition-duration: .2s;
+color: white;
+background-color: var(--primary);
+}
+
+.button:hover {
+background-color: var(--primary-hover);
+}
+
+.button:active {
+    transform: scale(0.95);
+}
+
+we give var primary for background-color and button hover bg color
+so assign the value for this in top of the style tag
+
+    :root {
+    --primary: rgb(88, 40, 244);
+    --primary-hover: rgb(69, 29, 200);
+    }
+
+then we are going to add bg image in class 
+
+    bg-[url('...')]
