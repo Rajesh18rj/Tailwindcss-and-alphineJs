@@ -194,3 +194,26 @@ then we use that in article tag
 w-[50%] truncate
 enna pannum naa.. card oda width 50 % mela aanathum balance words ah ... (dot vachu) kaatum 
 
+# 4 side bar
+
+we also define the h2 properties in styles
+
+    h2 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: bold;
+    margin-bottom: 0.75rem;
+    }
+
+then we are creating hoverlist attribute 
+
+    <ul class="hoverlist" >
+and we define that in style
+
+    .hoverlist>* {
+    @apply hover:bg-gray-100 rounded-md transition duration-150;
+    }
+    .hoverlist>*>a {
+    @apply p-2 block;
+    }
+
