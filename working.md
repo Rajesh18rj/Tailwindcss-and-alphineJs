@@ -170,3 +170,27 @@ then title pakkathula icon iruntha nalla irukum .. so title tag ku keela itha ku
 <link rel="shortcut icon" type="image/png" href="https://img.icons8.com/small/64/ffffff/handshake-heart.png">
 (intha icon image already namma use pannathu than.. )
 
+# 3
+
+we need a card so we define that in style 
+
+    .card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    border-radius: 1rem;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+    background-color: white;
+    padding-bottom: 1rem;
+    }
+then we use that in article tag
+
+    <article class="card h-36">Post</article>
+
+<h3 class="text-lg font-bold w-[50%] truncate">Little Jedi is the one who is dump and shit</h3>
+
+w-[50%] truncate
+enna pannum naa.. card oda width 50 % mela aanathum balance words ah ... (dot vachu) kaatum 
+
