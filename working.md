@@ -73,7 +73,7 @@ intha mari styles la yelutha athoda name ah class la kudukalam
     <ul class="flex items-center navitems ">                 #we give that name (navitems)
         <li> <a  href="">Home</a> </li>
         <li><a  href="">Create Post</a></li>
-        <li><a  href="">Bart</a></li>
+        <li><a  href="">' Bart</a></li>
 
     </ul>
 </nav>
@@ -148,3 +148,25 @@ so assign the value for this in top of the style tag
 then we are going to add bg image in class 
 
     bg-[url('...')]
+
+then we want to change the font for heading 
+
+so go to google fonts 
+
+copy and paste emb code in header
+<link href="https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400..700;1,400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+then add this font family in h1
+    h1 {
+    font-size: 4rem;
+    line-height: 1.2;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    font-family: "Lora", serif;
+
+just like this 
+
+then title pakkathula icon iruntha nalla irukum .. so title tag ku keela itha kudukka porom 
+<link rel="shortcut icon" type="image/png" href="https://img.icons8.com/small/64/ffffff/handshake-heart.png">
+(intha icon image already namma use pannathu than.. )
+
